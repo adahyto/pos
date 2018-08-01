@@ -1,0 +1,57 @@
+<section class="container">
+<br><br><br><br>
+<nav>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="all-orders-tab" data-toggle="tab" href="#all-orders" role="tab" aria-controls="all-orders" aria-selected="true">All Orders</a>
+    </li>
+    <li>
+      <a class="nav-link" id="each-product-tab" data-toggle="tab" href="#each-product" role="tab" aria-controls="each-product" aria-selected="false">Each Product</a>
+    </li>
+  </ul>
+</nav>
+<br>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="all-orders" role="tabpanel" aria-labelledby="home-tab">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>orderID</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each history}}
+            <tr>
+              <td>{{this}}</td>
+            </tr>
+          {{/each}}
+
+      </tbody>
+  </table>
+  </div>
+  <div class="tab-pane fade" id="each-product" role="tabpanel" aria-labelledby="profile-tab">
+    <h2>All records list</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>quantity</th>
+          <th>date</th>
+          <th>orderID</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each records}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{quantity}}</td>
+          <td>{{date}}</td>
+          <td>{{storyId}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</section>

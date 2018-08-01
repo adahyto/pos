@@ -1,0 +1,13 @@
+<section class="container">
+<br><br><br>
+<h2>edit</h2>
+<form action="/admin/products/edit/{{product.id}}?_method=PUT" method="post">
+  <div class="form-group">
+    <input type="text" name="name" value="{{product.name}}">
+  </div>
+  <div class="formgroup">
+    <input type="text" name="price" value="{{product.price}}">
+  </div>
+  <button type="submit">update</button>
+</form>
+</section>

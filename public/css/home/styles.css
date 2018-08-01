@@ -1,0 +1,17 @@
+ul {list-style-type: none;}
+li{
+  margin: 2.5px;
+}
+.productBox{
+  text-align: center;
+  border: 1px solid Black;
+}
+
+.productListBox div{
+  width: 100%;
+  height: 100%;
+}
+.productListBox:hover{
+  background-color: rgba(0,0,0,0.1);
+  cursor: pointer
+}
