@@ -77,6 +77,22 @@ router.get('/records', (req, res)=>{
     });
 });
 
+
+
+router.get('/records/order/:storyId', (req, res)=>{
+  Record.find({storyId: req.params.storyId})
+    .then(records=>{
+      res.render('admin/products/order', {records: records});
+    });
+});
+
+
+
+
+
+
+
+
 router.post('/record',(req, res)=>{
     let cart = req.body.cart;
     let storyId = genID();

@@ -1,0 +1,25 @@
+
+<br><br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>date</th>
+      <th>price</th>
+      <th>quantity</th>
+      <th>cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each records}}
+      <tr class="clickable-row" data-href="http://localhost:4242/admin/products/edit/{{ProductId}}">
+      <td>{{name}}</td>
+      <td>{{date}}</td>
+      <td>{{price}}</td>
+      <td>{{quantity}}</td>
+      <td>{{cost}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<br><br>

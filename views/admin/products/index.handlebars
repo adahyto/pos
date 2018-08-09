@@ -1,28 +1,30 @@
-<section class="container">
+<main class="container">
 <br><br><br><br>
-<div class="row">
-  <div class="col-md-6">
-    <h2>All products list</h2>
-  </div>
-  <div class="col-md-6">
-    <a class="btn btn-primary btn-md"href="/admin/products/create">Add new</a>
-  </div>
-</div>
-<br><hr>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>price</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each products}}
-    <tr class="clickable-row" data-href="http://localhost:4242/admin/products/edit/{{id}}">
-      <td>{{name}}</td>
-      <td>{{price}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-</section>
+  <section>
+    <div class="row">
+      <div class="col">
+        <table class="table table-sm table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each products}}
+            <tr class="clickable-row" data-href="http://localhost:4242/admin/products/edit/{{id}}">
+              <td>{{name}}</td>
+              <td>{{price}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <div class="text-right">
+          <a class="btn btn-primary btn-md"href="/admin/products/create">Add new</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
