@@ -6,33 +6,33 @@ const Product = require('../../models/Product');
 /*const LocalStrategy = require('passport-local').Strategy;*/
 /*const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;*/
 
-router.all('/*', (req, res, next)=>{
+router.all('/*', (req, res, next) => {
   req.app.locals.layout = "home";
   next();
 });
 
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
   res.render('home/index');
 });
 
-router.get('/login', (req, res)=>{
+router.get('/login', (req, res) => {
   res.render('home/login');
 });
 
-router.get('/statistics', (req, res)=>{
+router.get('/statistics', (req, res) => {
   res.render('home/statistics');
 });
 
-router.get('/api/products', (req, res)=>{
+router.get('/api/products', (req, res) => {
   Product.find({})
-    .then(products=>{
+    .then(products => {
       res.send(products);
     });
 });
 
-router.get('/api/products/:id', (req, res)=>{
-  Product.findOne({_id: req.params.id})
-    .then(product=>{
+router.get('/api/products/:id', (req, res) => {
+  Product.findOne({ _id: req.params.id })
+    .then(product => {
       res.send(product);
     });
 });

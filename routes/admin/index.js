@@ -5,12 +5,12 @@ const router = express.Router();
 /*const LocalStrategy = require('passport-local').Strategy;*/
 /*const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;*/
 
-router.all('/*', (req, res, next)=>{
+router.all('/*', (req, res, next) => {
   req.app.locals.layout = 'admin';
   next();
 });
 
-router.get('/', (req, res)=>{
+router.get('/', (req, res) => {
   res.render('admin/index');
 });
 

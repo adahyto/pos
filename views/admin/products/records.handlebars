@@ -1,57 +1,59 @@
 <section class="container">
-<br><br><br><br>
-<nav>
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="all-orders-tab" data-toggle="tab" href="#all-orders" role="tab" aria-controls="all-orders" aria-selected="true">All Orders</a>
-    </li>
-    <li>
-      <a class="nav-link" id="each-product-tab" data-toggle="tab" href="#each-product" role="tab" aria-controls="each-product" aria-selected="false">Each Product</a>
-    </li>
-  </ul>
-</nav>
-<br>
-<div class="tab-content">
-  <div class="tab-pane fade show active" id="all-orders" role="tabpanel" aria-labelledby="home-tab">
-    <table id="dtb-all-orders" class="display table table-sm table-striped table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>orderID</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each history}}
-            <tr class="clickable-row" data-href="http://localhost:4242/admin/products/records/order/{{this}}">
-              <td>{{this}}</td>
-            </tr>
+  <br><br><br><br>
+  <nav>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="all-orders-tab" data-toggle="tab" href="#all-orders" role="tab"
+          aria-controls="all-orders" aria-selected="true">All Orders</a>
+      </li>
+      <li>
+        <a class="nav-link" id="each-product-tab" data-toggle="tab" href="#each-product" role="tab"
+          aria-controls="each-product" aria-selected="false">Each Product</a>
+      </li>
+    </ul>
+  </nav>
+  <br>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="all-orders" role="tabpanel" aria-labelledby="home-tab">
+      <table id="dtb-all-orders" class="display table table-sm table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>orderID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each history}}
+          <tr class="clickable-row" data-href="http://localhost:4242/admin/products/records/order/{{this}}">
+            <td>{{this}}</td>
+          </tr>
           {{/each}}
 
-      </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane fade" id="each-product" role="tabpanel" aria-labelledby="profile-tab">
+      <table id="dtb-all-rec" class="display table table-striped table-sm table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>date</th>
+            <th>name</th>
+            <th>quantity</th>
+            <th>cost</th>
+            <th>orderID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each records}}
+          <tr class="clickable-row" data-href="http://localhost:4242/admin/products/edit/{{ProductId}}">
+            <td>{{date}}</td>
+            <td>{{name}}</td>
+            <td>{{quantity}}</td>
+            <td>{{cost}}</td>
+            <td>{{storyId}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="tab-pane fade" id="each-product" role="tabpanel" aria-labelledby="profile-tab">
-    <table id="dtb-all-rec" class="display table table-striped table-sm table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>date</th>
-          <th>name</th>
-          <th>quantity</th>
-          <th>cost</th>
-          <th>orderID</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each records}}
-        <tr class="clickable-row" data-href="http://localhost:4242/admin/products/edit/{{ProductId}}">
-          <td>{{date}}</td>
-          <td>{{name}}</td>
-          <td>{{quantity}}</td>
-          <td>{{cost}}</td>
-          <td>{{storyId}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-</div>
 </section>

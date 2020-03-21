@@ -9,21 +9,21 @@ const methodOverride = require('method-override');
 /*const session = require('express-session');*/
 /*const flash = require('connect-flash');*/
 /*const passport = require('passport');*/
-const {mongoDbUrl} = require('./config/database');
+const { mongoDbUrl } = require('./config/database');
 const PORT = 4242;
 
 //database
-mongoose.connect(mongoDbUrl).then((db)=>{
+mongoose.connect(mongoDbUrl).then((db) => {
     console.log(`${mongoDbUrl} connected`);
-}).catch(error=>console.log(error));
+}).catch(error => console.log(error));
 
 //set static & engine
 app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', handles({defaultLayout: 'home'}));
+app.engine('handlebars', handles({ defaultLayout: 'home' }));
 app.set('view engine', 'handlebars');
 
 //body-parser
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
@@ -35,6 +35,6 @@ app.use('/', home);
 app.use('/admin', admin);
 app.use('/admin/products', products);
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
 });

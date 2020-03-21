@@ -6,27 +6,27 @@ const RecordSchema = new Schema({
     type: String,
     required: true
   },
-  ProductId:  {
+  ProductId: {
     type: String,
     required: true
   },
-  name:  {
+  name: {
     type: String,
     required: true
   },
-  price:  {
+  price: {
     type: Number,
     required: true
   },
-  quantity:  {
+  quantity: {
     type: String,
     required: true
   },
-  cost:  {
+  cost: {
     type: Number,
     required: true
   },
-  date:  {
+  date: {
     type: String,
     required: true
   }
