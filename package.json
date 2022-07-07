@@ -23,7 +23,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
-    "moment": "^2.22.1",
+    "moment": "^2.29.4",
     "mongoose": "^5.0.16",
     "mongoose-url-slugs": "^1.0.2",
     "nodemon": "^1.17.3",
